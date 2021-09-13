@@ -10,7 +10,7 @@ const Header = ({ groupQuery }) => {
         const queryLength = query.length;
         if (queryLength > 0) {
           for (const [index, obj] of Object.entries(query)) {
-            // Sorting keys for a proper query
+            // Sorting keys for a proper querys
             const sortedObj = {};
             if (obj.Field) sortedObj.Field = obj.Field;
             if (obj.Condition) sortedObj.Condition = obj.Condition;
@@ -30,7 +30,7 @@ const Header = ({ groupQuery }) => {
             // Verify and show operator only in middle of query's
             if (
               queryLength > 1 &&
-              queryLength - (index + 1) !== 0 &&
+              queryLength - (parseInt(index, 2) + 1) > 0 && 
               operator
             ) {
               s += ` ${QUERY_OPERATOR[operator]} `;
